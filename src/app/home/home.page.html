@@ -1,0 +1,86 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Consulta Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content ion-padding">
+  <div class="card-wrap">
+    <ion-segment [(ngModel)]="modo" aria-label="Modo de pesquisa" class="modo-segment">
+      <ion-segment-button value="cep">
+        <ion-label>CEP</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="cidade">
+        <ion-label>Cidade</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-item class="input-item">
+      <ion-label position="floating" *ngIf="modo === 'cep'">Digite o CEP</ion-label>
+      <ion-label position="floating" *ngIf="modo === 'cidade'">Digite a cidade (ex: São Paulo, SP)</ion-label>
+
+      <ion-input [(ngModel)]="entrada" type="text" [attr.maxlength]="modo === 'cep' ? 9 : null"
+        inputmode="{{ modo === 'cep' ? 'numeric' : 'text' }}" clearInput
+        placeholder="{{ modo === 'cep' ? 'Ex: 01001-000' : 'Ex: Rio de Janeiro, RJ' }}"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="modo === 'cep' ? buscarPorCep() : buscarPorCidade()" [disabled]="buscando"
+      class="buscar-btn">
+      <ion-icon slot="start" name="search-outline"></ion-icon>
+      Buscar
+    </ion-button>
+
+    <div class="status-row" *ngIf="buscando">
+      <ion-spinner name="crescent"></ion-spinner>
+      <span>Buscando...</span>
+    </div>
+
+    <ion-text color="danger" *ngIf="erroMsg" class="erro-msg">
+      {{ erroMsg }}
+    </ion-text>
+
+    <ion-card *ngIf="resultado" class="resultado-card">
+      <ion-card-header>
+        <ion-card-title>
+          {{ resultado.endereco?.localidade || resultado.endereco?.logradouro || 'Local' }}
+          <small *ngIf="resultado.endereco?.cep"> — {{ resultado.endereco?.cep }}</small>
+        </ion-card-title>
+        <ion-card-subtitle *ngIf="resultado.endereco">
+          {{ resultado.endereco.bairro }}, {{ resultado.endereco.localidade }} - {{ resultado.endereco.uf }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="row">
+          <div class="col">
+            <strong>Temperatura</strong>
+            <div class="value">{{ resultado.clima?.temperatura ?? '—' }} °C</div>
+
+            <strong class="mt">Condição</strong>
+            <div class="value">{{ resultado.clima?.descricao ?? '—' }}</div>
+          </div>
+
+          <div class="col">
+            <strong>Umidade</strong>
+            <div class="value">
+              {{ resultado.clima?.umidade != null ? (resultado.clima?.umidade + ' %') : '—' }}
+            </div>
+
+            <strong class="mt">Vento</strong>
+            <div class="value">
+              {{ resultado.clima?.vento?.velocidade != null ? (resultado.clima?.vento?.velocidade + ' m/s') : '—' }}
+            </div>
+          </div>
+        </div>
+
+        <ion-item lines="none" class="coords">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-label>
+            <h3>Atualizado em</h3>
+            <p>{{ formatarDataHora(resultado.clima?.time) }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

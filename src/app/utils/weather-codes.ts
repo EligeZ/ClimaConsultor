@@ -1,0 +1,23 @@
+export const WEATHER_CODE_MAP: Record<number, string> = {
+  0: 'Céu limpo',
+  1: 'Principalmente limpo',
+  2: 'Parcialmente nublado',
+  3: 'Nublado',
+  45: 'Névoa',
+  48: 'Névoa com geada',
+  51: 'Garoa leve',
+  53: 'Garoa moderada',
+  55: 'Garoa intensa',
+  61: 'Chuva leve',
+  63: 'Chuva moderada',
+  65: 'Chuva forte',
+  71: 'Neve leve',
+  73: 'Neve moderada',
+  75: 'Neve forte',
+  80: 'Aguaceiros leves',
+  81: 'Aguaceiros moderados',
+  82: 'Aguaceiros fortes',
+  95: 'Trovoadas leves ou moderadas',
+  96: 'Trovoadas com granizo leve',
+  99: 'Trovoadas com granizo forte'
+};

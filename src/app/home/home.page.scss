@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.home-content {
+  --padding-top: 18px;
+  --padding-bottom: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.card-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* segmento de modo */
+.modo-segment {
+  margin-bottom: 12px;
+  --background: transparent;
+}
+
+/* item do input */
+.input-item {
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  margin-bottom: 12px;
+}
+
+.input-item ion-label[position="floating"] {
+  margin-bottom: 10px; 
+}
+
+/* botao de buscar */
+.buscar-btn {
+  --border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+/* linha de status (spinner + texto) */
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--ion-color-medium);
+}
+
+/* mensagem de erro */
+.erro-msg {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* cartão de resultado */
+.resultado-card {
+  --border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(2,6,23,0.06);
+  margin-top: 8px;
+}
+
+/* conteúdo do cartão */
+.row {
+  display: flex;
+  gap: 20px;
+  padding: 8px 0;
+}
+
+.col {
+  flex: 1 1 0;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.muted {
+  color: var(--ion-color-medium);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.coords {
+  margin-top: 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.02);
+}
+
+/* mobile adjustments */
+@media (max-width: 420px) {
+  .row {
+    flex-direction: column;
+  }
+  .card-wrap {
+    padding: 0 10px;
+  }
+}
+
+/* pequeno ajuste visual para inputs e cartões */
+ion-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+ion-card-subtitle {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium);
+}

@@ -1,0 +1,73 @@
+# ========================================
+# Node & dependencies
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================================
+# Angular / Ionic / Capacitor
+# ========================================
+www/
+platforms/
+plugins/
+dist/
+tmp/
+out-tsc/
+.bazel-out/
+.sourcemaps/
+.versions/
+.angular/
+.angular/cache/
+.nx/
+.nx/cache/
+coverage/
+
+# ========================================
+# Build artifacts
+# ========================================
+*.tmp
+*.tmp.*
+*.log
+log.txt
+*.sw[mnpcod]
+*~
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+connect.lock
+libpeerconnection.log
+testem.log
+
+# ========================================
+# IDE / Editor configs
+# ========================================
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.c9/
+*.launch
+
+# ========================================
+# OS / System files
+# ========================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================================
+# Misc
+# ========================================
+.sass-cache/
+typings/
