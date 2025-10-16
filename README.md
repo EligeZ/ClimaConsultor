@@ -11,7 +11,7 @@ Aplicação que busca informações meteorológicas a partir de CEP ou nome de c
 - [Como rodar o projeto localmente](#como-rodar-o-projeto-localmente)
 - [Suposições feitas](#suposições-feitas)
 - [Possíveis melhorias](#possíveis-melhorias)
-- [Licença](#licença)
+- [Autor](#autor)
 
 ---
 
@@ -134,6 +134,6 @@ Aqui vão sugestões de melhorias que podem evoluir o projeto:
 
 ---
 
-## 🧑‍💻 Autor
+## Autor
 
 | [EligeZ](https://github.com/EligeZ) |
