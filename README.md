@@ -23,9 +23,9 @@ Este projeto tem como objetivo permitir que o usuário consulte o clima atual e 
 
 ## APIs utilizadas e links de documentação
 
-ViaCEP - https://viacep.com.br
-Geocoding API - https://developers.google.com/maps/documentation/geocoding/overview (Necessita Chave)
-Open-Meteo API - https://open-meteo.com
+- ViaCEP - https://viacep.com.br
+- Geocoding API - https://developers.google.com/maps/documentation/geocoding/overview (Necessita Chave)
+- Open-Meteo API - https://open-meteo.com
 
 ---
 
